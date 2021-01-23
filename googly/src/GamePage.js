@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ScorePage from "./ScorePage"
+import { Score } from "./Score";
 
-export const GamePage = () => {
-  <ScorePage />
-};
+export const GamePage = () => <Score />;
