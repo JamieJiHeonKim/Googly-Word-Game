@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HomePage } from "./HomePage";
 import { CounterPage } from "./CounterPage";
 import { NotFoundPage } from "./NotFoundPage.js";
+import { GamePage } from "./GamePage.js";
 import { NavBar } from "./NavBar";
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path="/counter">
               <CounterPage />
+            </Route>
+            <Route path="/game">
+              <GamePage />
             </Route>
             <Route>
               <NotFoundPage />

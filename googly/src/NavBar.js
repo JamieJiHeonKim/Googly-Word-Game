@@ -9,5 +9,8 @@ export const NavBar = () => (
     <li>
       <Link to="/counter"> Counter </Link>
     </li>
+    <li>
+      <Link to="/game"> Game </Link>
+    </li>
   </ul>
 );
