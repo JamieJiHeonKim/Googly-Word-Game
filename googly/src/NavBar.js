@@ -1,16 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const NavBar = () => (
-  <ul>
-    <li>
-      <Link to="/"> Home</Link>
-    </li>
-    <li>
-      <Link to="/counter"> Counter </Link>
-    </li>
-    <li>
-      <Link to="/game"> Game </Link>
-    </li>
-  </ul>
+  <Navbar bg="dark" variant="dark">
+    <Navbar.Brand>Googly</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/game">Game</Nav.Link>
+    </Nav>
+  </Navbar>
 );

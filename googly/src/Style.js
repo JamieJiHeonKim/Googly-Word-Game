@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   display: inline-block;
   font-size: 16px;
 `;
+
 const Title = styled.h1`
   font-size: 30px;
   text-align: center;
