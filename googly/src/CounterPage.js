@@ -1,5 +1,6 @@
 import { Button, DangerButton } from "./Style";
 import React, { useState } from "react";
+import PlayGame from './PlayGame';
 
 export const CounterPage = () => {
   //const [clicks, setClicks] = useState(0);
@@ -28,6 +29,7 @@ export const CounterPage = () => {
       >
         Submit
       </Button>
+      <PlayGame />
     </>
   );
 };
