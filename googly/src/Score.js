@@ -27,10 +27,9 @@ export const Score = () => {
         fadedOpacity={20}
       />
 
-      <Button buttonColor="green" onClick={() => setCount(count + 5)}>
-
+      {/* <Button buttonColor="green" onClick={() => setCount(count + 5)}>
         Click Bait
-      </Button>
+      </Button> */}
     </>
   );
 };

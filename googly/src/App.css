@@ -44,15 +44,29 @@
 }
 /* Field params */
 .field {
-  height: 500px;
-  border: 2px solid black;
+  height: 400px;
+  border: 10px solid;
+  border-image-source: linear-gradient(
+    45deg,
+    rgb(0, 143, 143),
+    rgb(250, 224, 66)
+  );
+  border-image-slice: 1;
   position: relative;
   overflow-y: hidden;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 /* Dot positioning */
 .word {
-  border: 1px solid #000;
+  border: 1px solid rgb(255, 255, 255);
+  font-size: 30px;
   position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 15px;
 }
 /* centered page */
 .centered {
@@ -82,9 +96,9 @@
   margin-top: 45px;
 }
 .jumbotron {
-  background-color:#e0ffff!important;
+  background-color: #e0ffff !important;
 }
-/* Modify the backgorund color */ 
-.navbar-custom { 
-  background-color:#20B2AA; 
-} 
+/* Modify the backgorund color */
+.navbar-custom {
+  background-color: #20b2aa;
+}

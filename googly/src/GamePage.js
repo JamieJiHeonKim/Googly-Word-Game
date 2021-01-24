@@ -11,11 +11,10 @@ export const GamePage = () => {
     <>
       <ConfettiAnimation run={false} />
       <Score />
-      <PlayGame />
       <div>
         <RecoilRoot>{<Animation />}</RecoilRoot>
       </div>
+      <PlayGame />
     </>
   );
 };
-

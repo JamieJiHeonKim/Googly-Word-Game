@@ -80,6 +80,9 @@ export const Animation = () => {
         <Control onClear={clear} />
         {/*<Score />*/}
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="field" ref={fieldRef}>
         {words.map((word, index) => {
           const x = ((fieldRef.current.offsetWidth - word.size) * word.x) / 100;
