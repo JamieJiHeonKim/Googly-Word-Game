@@ -17,6 +17,12 @@ const Title = styled.h1`
   color: teal;
 `;
 
+const Title2 = styled.h1`
+  font-size: 60px;
+  text-align: center;
+  color: teal;
+`;
+
 export const Button = ({ children, buttonColor, ...props }) => {
   return (
     <StyledButton buttonColor={buttonColor} {...props}>
@@ -35,4 +41,8 @@ export const DangerButton = ({ children, ...props }) => {
 
 export const ScoreFont = ({ children, ...props }) => {
   return <Title {...props}>{children}</Title>;
+};
+
+export const GooglyFont = ({ children, ...props }) => {
+  return <Title2 {...props}>{children}</Title2>;
 };

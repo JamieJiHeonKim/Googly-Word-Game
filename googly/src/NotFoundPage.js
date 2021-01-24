@@ -1,6 +1,8 @@
 import React from "react";
+
 export const NotFoundPage = () => (
-  <>
-    <h1> 404 - page not found</h1>
-  </>
+  <div>
+    <h1>404</h1>
+    <p>OOPS! PAGE NOT FOUND.</p>
+  </div>
 );

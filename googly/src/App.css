@@ -54,3 +54,37 @@
   border: 1px solid #000;
   position: absolute;
 }
+/* centered page */
+.centered {
+  height: 100vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* img */
+.photo {
+  height: 120px;
+  width: 120px;
+  margin-left: 350px;
+}
+/* right side of home */
+.right1 {
+  margin-top: -465px;
+  margin-bottom: 50px;
+}
+/* right side of home */
+.right2 {
+  margin-top: auto;
+  margin-bottom: 40px;
+}
+/* right side of home */
+.right3 {
+  margin-top: 45px;
+}
+.jumbotron {
+  background-color:#e0ffff!important;
+}
+/* Modify the backgorund color */ 
+.navbar-custom { 
+  background-color:#20B2AA; 
+} 
