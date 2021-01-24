@@ -15,6 +15,7 @@ export const GamePage = () => {
       <div>
         <RecoilRoot>{<Animation />}</RecoilRoot>
       </div>
+    
     </>
   );
 };

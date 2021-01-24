@@ -9,14 +9,13 @@ export const HomePage = () => (
       <GooglyFont>Googly</GooglyFont>
       <p>
         Googly is an online learning platform that serves to teach the English
-        terminology and basic mathematics through an immersive game.
+        terminology and basic mathematics through our immersive game.
         <br></br>
         Recent studies from the United Nations concluded that 617 million youth
-        worldwide lack literacy skills including 750 million adults remaining
+        worldwide lack literacy skills including a surprising amount of 750 million adults remaining
         illiterate in 2016.
         <br></br>
-        “Anyone who has never made a mistake has never tried anything new.”
-        -Albert Einstein
+        <i>“Anyone who has never made a mistake has never tried anything new.” -Albert Einstein</i>
       </p>
       <img src={education} />
       <br></br>
