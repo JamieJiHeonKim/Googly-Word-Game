@@ -1,6 +1,6 @@
 import React from 'react';
 import  { Component } from 'react';
-
+import { WordList } from "./WordList";
 
 class PlayGame extends Component {
     constructor(props) {
@@ -12,15 +12,6 @@ class PlayGame extends Component {
     }
 
     componentDidMount() {
-        /*fetch('https://rapidapi.com/mcnaveen/api/random-words-with-pronunciation')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    isLoaded: true,
-                    words: json,
-                })
-            });*/
-
         fetch("https://random-words-with-pronunciation.p.rapidapi.com/word", {
             "method": "GET",
             "headers": {
@@ -42,7 +33,7 @@ class PlayGame extends Component {
             console.error(err);
         });
 
-        
+
     }
 
     render() {
@@ -64,6 +55,7 @@ class PlayGame extends Component {
                                 Definition: {words.definition}
                             </li>
                         ))}
+                        <WordList key={words[0]} value={words[0]} />
                     </ul>
                 </div>
             );
