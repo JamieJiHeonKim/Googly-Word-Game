@@ -4,7 +4,7 @@ import { Button, ScoreFont } from "./Style";
 
 import { ConfettiAnimation } from "./Confetti";
 
-export const Score = ({ correct }) => {
+export const Score = ({ change }) => {
   const [count, setCount] = useState(0);
   const [recycle, setRecycle] = useState(false);
 
@@ -14,7 +14,10 @@ export const Score = ({ correct }) => {
     } else {
       setRecycle(false);
     }
-    if (correct) {
+    // if (input.toLowerCase() === correct.toLowerCase()) {
+    //   setCount(count + 5);
+    // }
+    if (change) {
       setCount(count + 5);
     }
   });

@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { Score } from "./Score";
 
-export const UserInput = ({ answer }) => {
+export const UserInput = () => {
   const [word, setWord] = useState("");
+  const [check, setCheck] = useState(false);
 
-  let match = false;
+  // let match = false;
 
-  const checkAnswer = () => {
-    let final = answer.word;
-    if (word.toLowerCase() === final.toLowerCase()) {
-      match = true;
-    } else {
-      match = false;
-    }
-    return match;
-  };
+  // const checkAnswer = () => {
+  //   let final = answer.word;
+  //   if (word.toLowerCase() === final.toLowerCase()) {
+  //     match = true;
+  //   } else {
+  //     match = false;
+  //   }
+  //   return match;
+  // };
 
   const onKeyPress = (e) => {
     if (e.which === 13) {
-      checkAnswer();
+      setCheck(true);
+    } else {
+      setCheck(false);
     }
   };
 
@@ -33,7 +36,6 @@ export const UserInput = ({ answer }) => {
           onKeyPress={onKeyPress}
         />
       </div>
-      <Score correct={match} />
     </>
   );
 };

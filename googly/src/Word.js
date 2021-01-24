@@ -17,7 +17,7 @@ export const Word = (props) => {
   return (
     <div className="word" style={wordStyle} onClick={() => onClick(index)}>
       {word}
-      <Speech text={word} textAsButton={true} displayText="♫" />
+      <Speech text={word} textAsButton={true} displayText="♪" />
     </div>
   );
 };

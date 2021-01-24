@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 15px;
 `;
 
