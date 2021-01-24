@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { HomePage } from "./HomePage";
 import { CounterPage } from "./CounterPage";
+import { GamePage } from "./GamePage";
 import { NotFoundPage } from "./NotFoundPage.js";
 import { GamePage } from "./GamePage.js";
 import { NavBar } from "./NavBar";
