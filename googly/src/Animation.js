@@ -76,7 +76,7 @@ export const Animation = () => {
   const onWordClick = (index) => {
     // setScore(score + calculatePoints(dots[index]));
     updateWords(removeWord(words, index));
-    setCount(count + 5);
+    setCount(count + 1);
   };
 
   const onKeyPress = (e) => {
@@ -121,8 +121,11 @@ export const Animation = () => {
           );
         })}
       </div>
+      <br></br>
+
       <div>
         <input
+          className="clean-textbox"
           type="text"
           placeholder="Type the words"
           value={input}
