@@ -7,8 +7,8 @@ import { createWord, removeWord } from "./Utils";
 
 import { Word } from "./Word";
 import { Control } from "./Control";
-
-const WORDS = ["test", "test1", "test2"];
+import { UserInput } from "./UserInput";
+import { Score } from "./Score";
 
 export const Animation = () => {
   // <h1>Animation is working.</h1>
@@ -71,14 +71,13 @@ export const Animation = () => {
 
   const onWordClick = (index) => {
     // setScore(score + calculatePoints(dots[index]));
-    updateWords(removeWord(words, index));
+    //updateWords(removeWord(words, index));
   };
 
   return (
     <div className="main">
       <div className="panel">
         <Control onClear={clear} />
-        {/*<Score />*/}
       </div>
       <br></br>
       <br></br>
@@ -87,13 +86,20 @@ export const Animation = () => {
         {words.map((word, index) => {
           const x = ((fieldRef.current.offsetWidth - word.size) * word.x) / 100;
           return (
-            <Word
-              key={word.text}
-              {...word}
-              x={x}
-              index={index}
-              onClick={onWordClick}
-            />
+            <>
+              <div>
+                <Word
+                  key={word.text}
+                  {...word}
+                  x={x}
+                  index={index}
+                  onClick={onWordClick}
+                />
+                <div>
+                  <UserInput answer={word} />
+                </div>
+              </div>
+            </>
           );
         })}
       </div>

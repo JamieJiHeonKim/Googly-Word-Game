@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { Score } from "./Score";
 
-export const UserInput = (list_word) => {
+export const UserInput = ({ answer }) => {
   const [word, setWord] = useState("");
+
   let match = false;
 
-  const checkAnswer = ({ word, answer }) => {
-    if (word.toLowerCase() === answer.toLowerCase()) {
+  const checkAnswer = () => {
+    let final = answer.word;
+    if (word.toLowerCase() === final.toLowerCase()) {
       match = true;
     } else {
       match = false;
@@ -13,9 +16,9 @@ export const UserInput = (list_word) => {
     return match;
   };
 
-  onKeyPress = (e) => {
+  const onKeyPress = (e) => {
     if (e.which === 13) {
-      checkAnswer(word, list_word[0]);
+      checkAnswer();
     }
   };
 
@@ -27,7 +30,7 @@ export const UserInput = (list_word) => {
           placeholder="Type the words"
           value={word}
           onChange={(e) => setWord(e.target.value)}
-          onKeyPress={this.onKeyPress}
+          onKeyPress={onKeyPress}
         />
       </div>
       <Score correct={match} />

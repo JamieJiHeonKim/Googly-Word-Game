@@ -8,15 +8,5 @@ export const SPEED_STEP = 10;
 
 export const SPAWN_INTERVAL = 3000;
 
-export const WORDS = [
-  "education",
-  "university",
-  "snake",
-  "graduation",
-  "failure",
-  "job",
-  "acquisition",
-  "discrimination",
-  "disparity",
-  "incongruity",
-];
+var randomWords = require("random-words");
+export const WORDS = randomWords(100);

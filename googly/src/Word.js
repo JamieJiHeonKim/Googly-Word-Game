@@ -1,5 +1,6 @@
 // import React, { useState, Fragment } from "react";
 import React from "react";
+import Speech from "react-speech";
 
 export const Word = (props) => {
   const { color, x, y, size, word, index, onClick } = props;
@@ -16,6 +17,7 @@ export const Word = (props) => {
   return (
     <div className="word" style={wordStyle} onClick={() => onClick(index)}>
       {word}
+      <Speech text={word} textAsButton={true} displayText="♫" />
     </div>
   );
 };

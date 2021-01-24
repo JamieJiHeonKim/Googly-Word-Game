@@ -50,7 +50,7 @@ export const Control = ({ onClear }) => {
           </Button>
         ) : (
           <Button
-            buttonColor="blue"
+            buttonColor="green"
             onClick={onStart}
             style={{ marginRight: "auto" }}
           >
