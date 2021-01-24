@@ -18,7 +18,7 @@ export const Animation = () => {
 
   const [input, setInput] = useState("");
   const [currentWord, setCurrentWord] = useState("");
-  const [count, setCount] = useState(false);
+  const [count, setCount] = useState(0);
   // const [score, setScore] = useRecoilState(scoreState);
 
   const requestRef = useRef();
@@ -75,16 +75,17 @@ export const Animation = () => {
 
   const onWordClick = (index) => {
     // setScore(score + calculatePoints(dots[index]));
-    //updateWords(removeWord(words, index));
+    updateWords(removeWord(words, index));
+    setCount(count + 5);
   };
 
   const onKeyPress = (e) => {
     if (e.which === 13) {
-      console.log(input);
-      console.log(currentWord);
-      if (input.toLowerCase() === currentWord.toLowerCase()) {
-        setCount(true);
-      }
+      // console.log(input);
+      // console.log(currentWord);
+      // if (input.toLowerCase() === currentWord.toLowerCase()) {
+      //   setCount(true);
+      // }
       setInput("");
     }
   };
@@ -113,6 +114,7 @@ export const Animation = () => {
                   x={x}
                   index={index}
                   onClick={onWordClick}
+                  youTyped={input}
                 />
               </div>
             </>

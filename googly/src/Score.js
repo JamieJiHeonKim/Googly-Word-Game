@@ -9,7 +9,15 @@ export const Score = ({ change }) => {
   const [recycle, setRecycle] = useState(false);
 
   useEffect(() => {
-    if (count === 100) {
+    if (
+      (count === 20) |
+      (count === 40) |
+      (count === 60) |
+      (count === 80) |
+      (count === 100) |
+      (count === 120) |
+      (count === 140)
+    ) {
       setRecycle(true);
     } else {
       setRecycle(false);
@@ -18,9 +26,9 @@ export const Score = ({ change }) => {
     //   setCount(count + 5);
     // }
     if (change) {
-      setCount(count + 5);
+      setCount(change);
     }
-  });
+  }, [change]);
 
   return (
     <>
@@ -29,7 +37,7 @@ export const Score = ({ change }) => {
       <ScoreFont>Score</ScoreFont>
       <ReactStoreIndicator
         value={count}
-        maxValue={100}
+        maxValue={1000}
         lineWidth={15}
         lineGap={3}
         fadedOpacity={20}
