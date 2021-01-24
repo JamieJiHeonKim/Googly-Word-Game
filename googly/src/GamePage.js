@@ -5,6 +5,7 @@ import { Score } from "./Score";
 import { ConfettiAnimation } from "./Confetti";
 import { RecoilRoot } from "recoil";
 import { Animation } from "./Animation";
+import { LoadData } from "./LoadData";
 
 export const GamePage = () => {
   return (
@@ -14,7 +15,7 @@ export const GamePage = () => {
       <div>
         <RecoilRoot>{<Animation />}</RecoilRoot>
       </div>
-      <PlayGame />
+      <LoadData />
     </>
   );
 };

@@ -1,9 +1,9 @@
-import { Button, DangerButton } from "./Style";
 import React, { useState } from "react";
 
-export const WordList = ({ key, value }) => {
-  const [word, setWord] = useState("");
+export const WordList = ({ word, children }) => {
   let list_word = [{}];
-
-  return <>list_word.push({(key, value)});</>;
+  list_word.push({ word });
+  return React.Children.map(children, (child) =>
+    React.cloneElement(child, { list_word })
+  );
 };

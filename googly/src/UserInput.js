@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UserInput = () => {
+export const UserInput = (list_word) => {
   const [word, setWord] = useState("");
   let match = false;
 
@@ -15,7 +15,7 @@ export const UserInput = () => {
 
   onKeyPress = (e) => {
     if (e.which === 13) {
-      checkAnswer(word, value[0]);
+      checkAnswer(word, list_word[0]);
     }
   };
 
