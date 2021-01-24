@@ -4,16 +4,21 @@ import { Button, ScoreFont } from "./Style";
 
 import { ConfettiAnimation } from "./Confetti";
 
-export const Score = () => {
+export const Score = ({ correct }) => {
   const [count, setCount] = useState(0);
   const [recycle, setRecycle] = useState(false);
+
   useEffect(() => {
-    if (count === 10) {
+    if (count === 100) {
       setRecycle(true);
     } else {
       setRecycle(false);
     }
+    if (correct) {
+      setCount(count + 5);
+    }
   });
+
   return (
     <>
       <ConfettiAnimation run={true} recycle={recycle} />
@@ -26,10 +31,6 @@ export const Score = () => {
         lineGap={3}
         fadedOpacity={20}
       />
-
-      {/* <Button buttonColor="green" onClick={() => setCount(count + 5)}>
-        Click Bait
-      </Button> */}
     </>
   );
 };
