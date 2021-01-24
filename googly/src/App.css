@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* Generic padding */
+.main {
+  text-align: center;
+  padding: 25px 50px 25px 50px;
+}
+/* Field params */
+.field {
+  height: 500px;
+  border: 2px solid black;
+  position: relative;
+  overflow-y: hidden;
+}
+/* Dot positioning */
+.word {
+  border: 1px solid #000;
+  position: absolute;
+}

@@ -24,7 +24,7 @@ export const Score = () => {
         lineGap={3}
         fadedOpacity={20}
       />
-      <Button buttonColor="green" onClick={() => setCount(count + 1)}>
+      <Button buttonColor="green" onClick={() => setCount(count + 5)}>
         Click Bait
       </Button>
     </>
