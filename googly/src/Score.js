@@ -5,20 +5,17 @@ import { ConfettiAnimation } from "./Confetti";
 
 export const Score = () => {
   const [count, setCount] = useState(0);
-  const [animate, setAnimate] = useState(true);
-  const [recycle, setRecycle] = useState(0);
+  const [recycle, setRecycle] = useState(false);
   useEffect(() => {
     if (count === 10) {
-      setAnimate(true);
-      setRecycle(200);
+      setRecycle(true);
     } else {
-      setAnimate(false);
-      setRecycle(0);
+      setRecycle(false);
     }
   });
   return (
     <>
-      <ConfettiAnimation run={animate} numberOfPieces={recycle} />
+      <ConfettiAnimation run={true} recycle={recycle} />
       <ScoreFont>Score</ScoreFont>
       <ReactStoreIndicator
         value={count}
