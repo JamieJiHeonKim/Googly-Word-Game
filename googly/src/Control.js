@@ -1,6 +1,7 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, props, renderTooltip } from "react";
 import { useRecoilState } from "recoil";
-
+// import { Button } from "./Style";
+import { Button } from "react-bootstrap"
 import { controlOptions } from "./Atom";
 
 export const Control = ({ onClear }) => {
@@ -35,24 +36,43 @@ export const Control = ({ onClear }) => {
 
   return (
     <div className="control">
-      <div className="control__buttons">
+      <div
+        className="control__buttons"
+        style={{ display: "flex", float: "right" }}
+      >
         {isRunning ? (
-          <button onClick={togglePause}>PAUSE</button>
+          <Button variant="warning" size="lg" 
+            onClick={togglePause}
+            style={{ marginRight: 10 }}
+          >
+            PAUSE
+          </Button>
         ) : (
-          <button onClick={onStart}>START</button>
+          <Button variant="success" size="lg" 
+            onClick={onStart}
+            style={{ marginRight: 10 }}
+          >
+            START
+          </Button>
         )}
-        <button onClick={onClear}>CLEAR</button>
+        <Button variant="danger" size="lg" 
+          onClick={onClear}
+          style={{ marginRight: "auto" }}
+        >
+          CLEAR
+        </Button>
       </div>
-      <div className="control__speed">
-        <p>{`Current speed: ${speed}`}</p>
+      <div className="control__speed" style={{ float: "left" }}>
+        <h5 style={{ color: "DodgerBlue" }}>{`Speed : ${speed}`}</h5>
         <input
           type="range"
           min="1"
           max="10"
           value={speed}
           onChange={onChangeSpeed}
+          style={{ marginLeft: "auto" }}
         />
-      </div>
+        </div>
     </div>
   );
 };

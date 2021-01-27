@@ -8,15 +8,5 @@ export const SPEED_STEP = 10;
 
 export const SPAWN_INTERVAL = 3000;
 
-export const WORDS = [
-  "test1",
-  "test2",
-  "test3",
-  "test4",
-  "test5",
-  "test6",
-  "test7",
-  "test8",
-  "test9",
-  "test10",
-];
+var randomWords = require("random-words");
+export const WORDS = randomWords(100);

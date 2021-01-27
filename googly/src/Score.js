@@ -4,16 +4,32 @@ import { Button, ScoreFont } from "./Style";
 
 import { ConfettiAnimation } from "./Confetti";
 
-export const Score = () => {
+export const Score = ({ change }) => {
   const [count, setCount] = useState(0);
   const [recycle, setRecycle] = useState(false);
+
   useEffect(() => {
-    if (count === 10) {
+    if (
+      (count === 9) |
+      (count === 19) |
+      (count === 29) |
+      (count === 39) |
+      (count === 49) |
+      (count === 59) |
+      (count === 69)
+    ) {
       setRecycle(true);
     } else {
       setRecycle(false);
     }
-  });
+    // if (input.toLowerCase() === correct.toLowerCase()) {
+    //   setCount(count + 5);
+    // }
+    if (change) {
+      setCount(change);
+    }
+  }, [change]);
+
   return (
     <>
       <ConfettiAnimation run={true} recycle={recycle} />
@@ -26,11 +42,6 @@ export const Score = () => {
         lineGap={3}
         fadedOpacity={20}
       />
-
-      <Button buttonColor="green" onClick={() => setCount(count + 5)}>
-
-        Click Bait
-      </Button>
     </>
   );
 };

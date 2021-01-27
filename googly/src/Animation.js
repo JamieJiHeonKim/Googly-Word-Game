@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
 
 import { controlOptions, wordsState, scoreState } from "./Atom";
@@ -7,14 +7,18 @@ import { createWord, removeWord } from "./Utils";
 
 import { Word } from "./Word";
 import { Control } from "./Control";
-
-const WORDS = ["test", "test1", "test2"];
+import { UserInput } from "./UserInput";
+import { Score } from "./Score";
 
 export const Animation = () => {
   // <h1>Animation is working.</h1>
   // const wordsArr = [{ text: "test", x: 100, y: 100 }, { text: "hello", x: 200, y: 300 }];
   const [words, updateWords] = useRecoilState(wordsState);
   const [controlState, setControlState] = useRecoilState(controlOptions);
+
+  const [input, setInput] = useState("");
+  const [currentWord, setCurrentWord] = useState("");
+  const [count, setCount] = useState(0);
   // const [score, setScore] = useRecoilState(scoreState);
 
   const requestRef = useRef();
@@ -72,27 +76,62 @@ export const Animation = () => {
   const onWordClick = (index) => {
     // setScore(score + calculatePoints(dots[index]));
     updateWords(removeWord(words, index));
+    setCount(count + 1);
+  };
+
+  const onKeyPress = (e) => {
+    if (e.which === 13) {
+      // console.log(input);
+      // console.log(currentWord);
+      // if (input.toLowerCase() === currentWord.toLowerCase()) {
+      //   setCount(true);
+      // }
+      setInput("");
+    }
   };
 
   return (
     <div className="main">
+      <div>
+        <Score change={count} />
+      </div>
       <div className="panel">
         <Control onClear={clear} />
-        {/*<Score />*/}
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="field" ref={fieldRef}>
         {words.map((word, index) => {
           const x = ((fieldRef.current.offsetWidth - word.size) * word.x) / 100;
+          //setCurrentWord(word);
           return (
-            <Word
-              key={word.text}
-              {...word}
-              x={x}
-              index={index}
-              onClick={onWordClick}
-            />
+            <>
+              <div>
+                <Word
+                  key={word.text}
+                  {...word}
+                  x={x}
+                  index={index}
+                  onClick={onWordClick}
+                  youTyped={input}
+                />
+              </div>
+            </>
           );
         })}
+      </div>
+      <br></br>
+
+      <div>
+        <input
+          className="clean-textbox"
+          type="text"
+          placeholder="Type the words"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={onKeyPress}
+        />
       </div>
     </div>
     // wordsArr.map((word, => (

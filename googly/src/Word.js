@@ -1,8 +1,11 @@
 // import React, { useState, Fragment } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Speech from "react-speech";
+import Toast from "react-bootstrap/Toast";
 
 export const Word = (props) => {
-  const { color, x, y, size, word, index, onClick } = props;
+  const { color, x, y, size, word, index, onClick, youTyped } = props;
+  const [body, setBody] = useState("Please type");
   // console.log("click --->,", click)
   const wordStyle = {
     backgroundColor: color,
@@ -12,10 +15,25 @@ export const Word = (props) => {
     left: `${props.x}px`,
     top: `${props.y}px`,
   };
-
+  useEffect(() => {
+    if (youTyped === word) {
+      console.log(youTyped);
+      console.log(word);
+      setBody("Good job, you typed it!!");
+    }
+    //setBody("Please type");
+  }, [youTyped]);
   return (
     <div className="word" style={wordStyle} onClick={() => onClick(index)}>
       {word}
+      <Speech text={word} textAsButton={true} displayText="♪" />
+      <Toast>
+        <Toast.Header>
+          <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
+          <strong className="mr-auto">Googly Bot</strong>
+        </Toast.Header>
+        <Toast.Body>{body}</Toast.Body>
+      </Toast>
     </div>
   );
 };
