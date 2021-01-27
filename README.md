@@ -7,4 +7,8 @@ The goal of our project, Googly, is to thrive on the quality of education and de
 https://sdgs.un.org/ Goal 4: Quality Education
 
 ## Screenshots
-![alt text](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/home.jpg?raw=true)
+![home](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/home.jpg?raw=true)
+![game0](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/game0.jpg?raw=true)
+![game15](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/game15.jpg?raw=true)
+![game50](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/game50.jpg?raw=true)
+![404](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/404.jpg?raw=true)
