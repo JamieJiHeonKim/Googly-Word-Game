@@ -4,14 +4,10 @@
 
 The goal of our project, Googly, is to thrive on the quality of education and demonstrate just how impactful it is to anyone, especially on young and new learners. We reach this goal by giving a very fun and engaging game, where players learn the English language through clicking and typing activities. Googly also provides sound for the words' proper pronunciation to build a stronger foundation.
 
-https://sdgs.un.org/ Goal 4: Quality Education
+Goal 4: Quality Education - https://sdgs.un.org/ 
 
 ## Screenshots
 ![home](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/home.jpg?raw=true)
----
-![game0](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/game0.jpg?raw=true)
----
-![game15](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/game15.jpg?raw=true)
 ---
 ![game50](https://github.com/JamieJiHeonKim/Googly-Word-Game/blob/master/googly/src/game50.jpg?raw=true)
 ---
