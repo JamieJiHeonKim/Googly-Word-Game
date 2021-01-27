@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactStoreIndicator from "react-score-indicator";
-import { Button, ScoreFont } from "./Style";
+import { ScoreFont } from "./Style";
 
 import { ConfettiAnimation } from "./Confetti";
 
@@ -16,15 +16,16 @@ export const Score = ({ change }) => {
       (count === 39) |
       (count === 49) |
       (count === 59) |
-      (count === 69)
+      (count === 69) |
+      (count === 79) |
+      (count === 89) |
+      (count === 99) 
     ) {
       setRecycle(true);
     } else {
       setRecycle(false);
     }
-    // if (input.toLowerCase() === correct.toLowerCase()) {
-    //   setCount(count + 5);
-    // }
+
     if (change) {
       setCount(change);
     }

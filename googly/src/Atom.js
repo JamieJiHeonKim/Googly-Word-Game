@@ -12,8 +12,3 @@ export const wordsState = atom({
   key: "wordsState",
   default: [],
 });
-
-// export const scoreState = atom({
-//     key: 'scoreState',
-//     default: 0,
-// });

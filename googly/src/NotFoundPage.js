@@ -1,14 +1,8 @@
 import React from "react";
 
 export const NotFoundPage = () => {
-  const style = {
-    // backgroundColor: "black",
-    // color: "red",
-    // backgroundImage: 'radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif")',
-  };
   return (
     <div className="error-body">
-      {/* <div className="errorbody" style={style}></div> */}
       <div className="noise"></div>
       <div className="overlay"></div>
       <div className="terminal">

@@ -1,6 +1,5 @@
-import React, { useEffect, useCallback, props, renderTooltip } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useRecoilState } from "recoil";
-// import { Button } from "./Style";
 import { Button } from "react-bootstrap"
 import { controlOptions } from "./Atom";
 

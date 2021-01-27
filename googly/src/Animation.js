@@ -1,31 +1,24 @@
 import React, { useCallback, useState, useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
 
-import { controlOptions, wordsState, scoreState } from "./Atom";
+import { controlOptions, wordsState } from "./Atom";
 import { SPEED_STEP, SPAWN_INTERVAL } from "./Constants";
 import { createWord, removeWord } from "./Utils";
 
 import { Word } from "./Word";
 import { Control } from "./Control";
-import { UserInput } from "./UserInput";
 import { Score } from "./Score";
 
 export const Animation = () => {
-  // <h1>Animation is working.</h1>
-  // const wordsArr = [{ text: "test", x: 100, y: 100 }, { text: "hello", x: 200, y: 300 }];
   const [words, updateWords] = useRecoilState(wordsState);
   const [controlState, setControlState] = useRecoilState(controlOptions);
 
   const [input, setInput] = useState("");
-  const [currentWord, setCurrentWord] = useState("");
   const [count, setCount] = useState(0);
-  // const [score, setScore] = useRecoilState(scoreState);
 
   const requestRef = useRef();
   const intervalRef = useRef();
   const fieldRef = useRef();
-
-  // console.log("WORDS BACK IN ANIMATION---->", createWord());
 
   const advanceStep = useCallback(() => {
     updateWords((oldWords) => {
@@ -37,7 +30,6 @@ export const Animation = () => {
             ...word,
             y: newY,
           });
-          // console.log("NEW WORDSSSSSS---->", newWords);
         }
       }
       return newWords;
@@ -67,25 +59,16 @@ export const Animation = () => {
   const clear = useCallback(() => {
     setControlState({ ...controlState, isRunning: false, speed: 5 });
     updateWords([]);
-    // setScore(0);
   }, [setControlState, updateWords, controlState]);
-  // }, [setControlState, setScore, updateDots, controlState]);
 
-  // console.log("OLD WORDS -------->", updateWords);
 
   const onWordClick = (index) => {
-    // setScore(score + calculatePoints(dots[index]));
     updateWords(removeWord(words, index));
     setCount(count + 1);
   };
 
   const onKeyPress = (e) => {
     if (e.which === 13) {
-      // console.log(input);
-      // console.log(currentWord);
-      // if (input.toLowerCase() === currentWord.toLowerCase()) {
-      //   setCount(true);
-      // }
       setInput("");
     }
   };
@@ -104,7 +87,6 @@ export const Animation = () => {
       <div className="field" ref={fieldRef}>
         {words.map((word, index) => {
           const x = ((fieldRef.current.offsetWidth - word.size) * word.x) / 100;
-          //setCurrentWord(word);
           return (
             <>
               <div>
@@ -134,28 +116,7 @@ export const Animation = () => {
         />
       </div>
     </div>
-    // wordsArr.map((word, => (
-    //     <Word text={word.text} key={word.text} x={word.x} y={word.y} size="40" />
-    // ))
-
-    // {/* <Word
-    //     // word="TEST"
-    //     color="red"
-    //     x="100" y="200"
-    //     // onClick={() => {}}
-    //     size="40"
-    // />
-    // <Word
-    //     // word="test2"
-    //     color="green"
-    //     x="200" y="300"
-    //     // onClick={() => {}}
-    //     size="35" /> */}
-    // {/* </div> */}
-    // </div>
   );
 };
 
 export default Animation;
-// const =[{text1: xxx}, {...}...]
-//

@@ -1,7 +1,6 @@
-import { MAX_POINTS, COLORS, SIZES, WORDS } from "./Constants";
+import { COLORS, SIZES, WORDS } from "./Constants";
 
 export const createWord = () => {
-  // pick random color and size
 
   const color = COLORS[Math.floor(Math.random() * COLORS.length)];
   const word = WORDS[Math.floor(Math.random() * WORDS.length)];
